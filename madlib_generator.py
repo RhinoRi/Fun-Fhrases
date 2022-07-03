@@ -1,5 +1,6 @@
 # mad lib generator fun game..
 import tkinter as tk
+import pyttsx3
 
 root = tk.Tk()
 root.geometry("800x500")
@@ -26,11 +27,32 @@ def inventStory():
     def generateStory():
         story1 = "My best Invention yet was my idea for a combined " + e6.get() + ", " + e2.get() + " and " + e7.get() + ".\n I called " \
                                                                                                                          "it the " + e1.get() + " mobile.\n It meant that wherever you go, you don't need to change the vehicles.\nThe only problem " \
-                                                                                                                                                "was that engines from the " + e6.get() + " were too\n " + e5.get() + " fot it to fly, so I invented " \
-                                                                                                                                                                                                                      " an engine\n that worked on " + e4.get() + " and " + e8.get() + ".\nWhile working on this, I got really hungry " \
-                                                                                                                                                                                                                                                                                       "so I ate " + e4.get() + " with " + e2.get() + " and it was really yum. \n " + e3.get() + ", you should try this too."
+                                                                                                                                                "was that engines from the " + e6.get() + " were too " + e5.get() + " for it to fly, so I invented " \
+                                                                                                                                                                                                                    " an engine  that worked on " + e4.get() + " and " + e8.get() + ".\nWhile working on this, I got really hungry " \
+                                                                                                                                                                                                                                                                                    "so I ate " + e4.get() + " with " + e2.get() + " and it was really yum. \n " + e3.get() + ", you should try this too."
         storyLabel = tk.Label(new, text=story1, foreground="white", background="#637187", font=("Candara", 15))
         storyLabel.place(x=6, y=220)
+        storyLabel.config(bg="#2b2722")
+
+        def readStory():
+            engine = pyttsx3.init()
+
+            voices = engine.getProperty('voices')
+            engine.setProperty('voice', voices[1].id)
+
+            engine.setProperty('rate', 150)
+
+            engine.say(story1)
+            engine.runAndWait()
+
+        read_btn = tk.Button(new,
+                             text="READ",
+                             command=readStory,
+                             font=("Canada", 13),
+                             fg="#fbfbfa",
+                             bg="#02782e",
+                             )
+        read_btn.place(x=720, y=280)
 
     name = tk.Label(new, text="NickName")
     name.place(x=10, y=50)
@@ -74,6 +96,7 @@ def inventStory():
 
     g_btn = tk.Button(new,
                       text="Generate",
+                      font=("Canada", 13),
                       command=generateStory)
     g_btn.place(x=80, y=460)
 
@@ -107,6 +130,26 @@ def foodStory():
 
         storyLabel = tk.Label(new, text=story2, foreground="white", background="#637187", font=("Candara", 15))
         storyLabel.place(x=20, y=220)
+
+        def readStory():
+            engine = pyttsx3.init()
+
+            voices = engine.getProperty('voices')
+            engine.setProperty('voice', voices[1].id)
+
+            engine.setProperty('rate', 150)
+
+            engine.say(story2)
+            engine.runAndWait()
+
+        read_btn = tk.Button(new,
+                             text="READ",
+                             command=readStory,
+                             font=("Canada", 13),
+                             fg="#fbfbfa",
+                             bg="#02782e",
+                             )
+        read_btn.place(x=720, y=280)
 
     veggie = tk.Label(new, text="Vegetable")
     veggie.place(x=10, y=50)
@@ -171,6 +214,26 @@ def animalStory():
 
         storyLabel = tk.Label(new, text=story3, foreground="white", background="#637187", font=("Candara", 15))
         storyLabel.place(x=20, y=220)
+
+        def readStory():
+            engine = pyttsx3.init()
+
+            voices = engine.getProperty('voices')
+            engine.setProperty('voice', voices[1].id)
+
+            engine.setProperty('rate', 150)
+
+            engine.say(story3)
+            engine.runAndWait()
+
+        read_btn = tk.Button(new,
+                             text="READ",
+                             command=readStory,
+                             font=("Canada", 13),
+                             fg="#fbfbfa",
+                             bg="#02782e",
+                             )
+        read_btn.place(x=720, y=280)
 
     c_name = tk.Label(new, text="Country ")
     c_name.place(x=30, y=50)
