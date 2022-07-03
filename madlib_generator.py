@@ -7,7 +7,7 @@ root.geometry("800x500")
 root.configure(bg="#637187")
 root.title("GAME")
 
-label = tk.Label(root, text="Fun Fhrase!",
+label = tk.Label(root, text="Fun Fhrase Game!",
                  foreground="white",
                  background="#637187",
                  font=("Gabriola", 55, "bold")).pack()
